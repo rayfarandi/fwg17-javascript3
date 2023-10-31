@@ -2,9 +2,8 @@ const cekHariKerja = (day) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             const dataDay = ['senin', 'selasa', 'rabu', 'kamis', 'jumat'];
-            let cek = dataDay.find((item) =>{
-                return item === day
-            }) 
+            let cek = dataDay.find((item) => item === day);
+
             if (cek) {
                 resolve(cek);
             } else {
@@ -14,12 +13,19 @@ const cekHariKerja = (day) => {
     })
     
 }
-const fungsiResult= (result)=>{
-    console.log(result + ` Hari Kerja`)
+//arrow function
+// const fungsiResult= (result)=>{
+//     console.log(result + ` Hari Kerja`)
+// }
 
-}
 
-// cekHariKerja('senin')
-cekHariKerja('senin').then(fungsiResult).catch((error) => {console.error(error.message);})
-cekHariKerja('selasa').then(fungsiResult).catch((error) => {console.error(error.message);})
-cekHariKerja('sabtu').then(fungsiResult).catch((error) => {console.error(error.message);})
+// cekHariKerja('senin').then(fungsiResult).catch((error) => {console.error(error.message);})
+// cekHariKerja('sabtu').then(fungsiResult).catch((error) => {console.error(error.message);})
+
+//inlinefunction
+cekHariKerja('senin').then((result) => console.log(result + ' Adalah Hari Kerja')).catch((error) => console.error(error.message));
+cekHariKerja('sabtu').then((result) => console.log(result + ' Adalah Hari Kerja')).catch((error) => console.error(error.message));
+
+
+
+// cekHariKerja('sabtu').then((result) => console.log(result + ' Adalah Hari Kerja')).catch((error) => console.error(error.input+``+error.message));
